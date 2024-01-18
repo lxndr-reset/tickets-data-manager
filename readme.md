@@ -1,4 +1,4 @@
-# TICKETS DATA MANAGE
+# TICKETS DATA MANAGER
 
 This program retrieves data from `tickets.json`:
 
