@@ -2,6 +2,7 @@ import TicketUtils.ParseTicketsFromFile;
 import TicketUtils.Ticket;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
         System.out.println("Пример: C:/users/user/tickets.json");
 
         Scanner scanner = new Scanner(System.in);
-        pathName = scanner.nextLine();
+        pathName = scanner.nextLine().trim().toLowerCase(Locale.ROOT);
         scanner.close();
 
         if (!pathName.endsWith("tickets.json")) {
@@ -36,7 +37,6 @@ public class Main {
         System.out.println("average: " + average);
         System.out.println("Difference between median and average: " + Math.abs(diff));
     }
-
     private static int getMedian(List<Ticket> tickets) {
         return tickets.get(tickets.size() / 2).price();
     }
